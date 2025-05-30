@@ -11,12 +11,38 @@ public:
         vector<int> output(n - k + 1);
         deque<int> q;
         int l = 0, r = 0;
+        
+        while (r < n) {
+            while (!q.empty() && nums[q.back()] < nums[r]) {
+                q.pop_back();
+            }
+            q.push_back(r);
 
-        while(r<r){
-            
+            if (l > q.front()) {
+                q.pop_front();
+            }
+            if((r+l) >=k){
+                output[l] = nums[q.front()];
+                l++;
+            }
+            r++;
         }
-
-        return output;
+        return output ;
     }
 };
+
+
+int main(){
+Solution solution;
+
+vector<int>& nums = {1,2,1,0,4,2,6};
+int k = 3;
+vector<int> results = solution.maxSlidingWindow(nums, k);
+
+for(int num : results){
+    cout << num <<" ";
+}
+cout << endl;
+return 0;
+}
 
