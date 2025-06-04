@@ -1,1 +1,32 @@
 Game dev CPP
+
+# Compiled Object files.
+*.obj
+*.objd
+# Compiled Dynamic libraries.
+*.dll
+# Compiled Static libraries.
+*.lib
+# Executable files.
+*.exe
+# Precompiled Headers.
+*.pch
+# Compiled Dynamic libraries (macOS).
+*.dylib
+# Compiled Static libraries (macOS).
+*.a
+# Compiled Object files (macOS).
+*.o
+
+# fodler output 
+bin/
+# Visual Studio Code settings
+.vscode/
+# Visual Studio Code extensions
+.vscode-test/
+# fodlr outputs
+/output/
+# CMake build directory
+build/
+# CMake cache files
+/settings.json
