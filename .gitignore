@@ -28,5 +28,6 @@ bin/
 /output/
 # CMake build directory
 build/
-# CMake cache files
-/settings.json
+
+.vscode/
+
