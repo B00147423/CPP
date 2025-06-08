@@ -21,13 +21,9 @@ Game dev CPP
 # fodler output 
 bin/
 # Visual Studio Code settings
-.vscode/
-# Visual Studio Code extensions
-.vscode-test/
+/.vscode/
+
 # fodlr outputs
 /output/
 # CMake build directory
 build/
-
-.vscode/
-
