@@ -3,29 +3,34 @@ using namespace std;
 #include <iostream>
 #include <algorithm>
 
-vector<int> dailyTemperatures(vector<int>& temperatures) {
-    int n = temperatures.size();
-    vector<int> res(n, 0);
+class Solution {
+public:
+    vector<int> dailyTemperatures(vector<int>& temperatures) {
+        stack<int> stack;   // Stack to store indices of temperatures
+        vector<int> result(temperatures.size(), 0);  // Initialize result with 0s
 
-    for (int i = n - 2; i >= 0; i--) {
-        int j = i + 1;
-        while (j < n && temperatures[j] <= temperatures[i]) {
-            if (res[j] == 0) {
-                j = n;
-                break;
+        // Start iterating backward from the second last element
+        for (int i = temperatures.size() - 1; i >= 0; i--) {
+            // While the stack is not empty and the current temperature is greater than the one at the index in the stack
+            while (!stack.empty() && temperatures[i] >= temperatures[stack.top()]) {
+                stack.pop();  // Pop elements that are not useful
             }
-            j += res[j]; // Skip ahead using precomputed steps
+            // If stack is not empty, it means we found a warmer temperature in the future
+            if (!stack.empty()) {
+                result[i] = stack.top() - i;  // Calculate the number of days until the next warmer temperature
+            }
+            // Push the current index onto the stack
+            stack.push(i);
         }
-        if (j < n) {
-            res[i] = j - i; // Store number of days to wait
-        }
+
+        return result;  // Return the result vector
     }
-    return res;
-}
+};
 
 int main() {
+    Solution solution;
     vector<int> temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
-    vector<int> result = dailyTemperatures(temperatures);
+    vector<int> result = solution.dailyTemperatures(temperatures);
 
     for (int days : result) {
         cout << days << " ";
