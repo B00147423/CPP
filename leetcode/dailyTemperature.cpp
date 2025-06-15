@@ -2,7 +2,7 @@
 using namespace std;
 #include <iostream>
 #include <algorithm>
-
+#include <stack>
 class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
