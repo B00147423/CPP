@@ -59,6 +59,10 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "slidingwindowmaximum,cpp": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "unordered_set": "cpp",
+        "map": "cpp",
+        "queue": "cpp",
+        "xtree": "cpp"
     }
 }
