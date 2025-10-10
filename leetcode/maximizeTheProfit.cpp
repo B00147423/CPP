@@ -6,7 +6,7 @@ class Solution {
 public:
     int maximizeTheProfit(int n, vector<vector<int>>& offers) {
         // sort by start index
-        std::ranges::sort(offers);
+        sort(offers.begin(), offers.end());
 
         int m = offers.size();
         vector<int> maxValueFromIndex(m + 1, 0);
