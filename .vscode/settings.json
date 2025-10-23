@@ -63,6 +63,14 @@
         "unordered_set": "cpp",
         "map": "cpp",
         "queue": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "chrono": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "sstream": "cpp"
     }
 }
