@@ -5,15 +5,13 @@
 #include <algorithm>
 #include <cctype>
 
-using namespace std;
-
 /*
  * Complete the 'generateAngleBracketSequences' function below.
  *
  * The function is expected to return a STRING_ARRAY.
  * The function accepts INTEGER n as parameter.
  */
-void backtrack(vector<string>& result, string current, int open, int close, int n){
+void backtrack(std::vector<std::string>& result, std::string current, int open, int close, int n){
     // If the current string has 2*n characters, it's complete
    if(current.length() == 2 * n){
         result.push_back(current);
@@ -29,8 +27,8 @@ void backtrack(vector<string>& result, string current, int open, int close, int 
         backtrack(result, current + ">", open, close+1, n);
     }
 }
-vector<string> generateAngleBracketSequences(int n) {
-    vector<string> result;
+std::vector<std::string> generateAngleBracketSequences(int n) {
+    std::vector<std::string> result;
     backtrack(result, "", 0, 0, n);
     return result;
 }
