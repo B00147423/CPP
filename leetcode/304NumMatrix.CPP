@@ -1,0 +1,51 @@
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class NumMatrix {
+    vector<vector<int>> sumMat;
+public:
+    NumMatrix(vector<vector<int>>& matrix) {
+
+        int ROWS = matrix.size(), COLS = matrix[0].size();
+        sumMat = vector<vector<int>> (ROWS + 1, vector<int>(COLS + 1, 0));
+   
+        for (int r = 0; r < ROWS; r++) {
+            int prefix = 0;
+            for (int c = 0; c < COLS; c++) {
+               
+                prefix += matrix[r][c];
+  
+                int above = sumMat[r][c + 1];
+                cout << "\nabove= " << above <<endl;
+                sumMat[r + 1][c + 1] = prefix + above;
+            }
+        }
+    }
+
+/*
+     0  1  2  3  4
+    ______________
+0  | 3  0  1  4  2
+1  | 5  6  3  2  1
+2  | 1  2  0  1  5
+3  | 4  1  0  1  7
+4  | 1  0  3  0  5
+
+*/
+    int sumRegion(int row1, int col1, int row2, int col2){
+        row1++; col1++; row2++; col2++;
+        int bottomRight = sumMat[row2][col2];
+        int above = sumMat[row1 - 1][col2];
+        int left = sumMat[row2][col1 - 1];
+        int topLeft = sumMat[row1 - 1][col1 - 1];
+        return bottomRight - above - left + topLeft;
+    }
+};
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * NumMatrix* obj = new NumMatrix(matrix);
+ * int param_1 = obj->sumRegion(row1,col1,row2,col2);
+ */
