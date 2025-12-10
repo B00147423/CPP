@@ -71,6 +71,7 @@
         "iomanip": "cpp",
         "random": "cpp",
         "ratio": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "climits": "cpp"
     }
 }
