@@ -46,3 +46,63 @@ public:
         return fresh == 0 ? minutes : -1;
     }
 };
+
+// second aprpoach
+
+class Solution {
+public:
+    int orangesRotting(vector<vector<int>>& grid) {
+        if (grid.empty()) return 0;
+        int rows = grid.size();
+        int cols = grid[0].size();
+        int result = 0;
+        vector<pair<int, int>> dirs {{1,0}, {-1, 0}, {0, 1}, {0, -1}};
+        queue<pair<pair<int, int>, int>> q;
+
+        
+        int fresh = 0;
+        for(int r = 0; r < rows; r++){
+            for(int c = 0; c < cols; c++){
+                if(grid[r][c] == 2){
+                    q.push({{r, c}, 0});
+                }                
+                if (grid[r][c] == 1) {
+                    fresh++;
+                }
+            }
+        }
+
+        while(!q.empty()){
+            auto curr = q.front();
+            q.pop();
+            int r = curr.first.first;
+            int c = curr.first.second;
+            int time = curr.second;
+
+            result = max(result, time);
+
+            for(auto d : dirs){
+                int nr = r + d.first;
+                int nc = c + d.second;
+
+                if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) {
+                    continue;
+                }
+
+                if (grid[nr][nc] != 1) {
+                    continue;
+                }
+
+                grid[nr][nc] = 2;
+                fresh --;
+                q.push({{nr, nc}, time + 1});
+            }
+        }
+        if(fresh > 0){
+            return -1;
+        }else{
+            return result;
+        }
+
+    }
+};
