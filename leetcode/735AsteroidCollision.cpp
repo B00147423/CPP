@@ -4,18 +4,18 @@ using namespace std;
 class Solution {
 public:
     vector<int> asteroidCollision(vector<int>& asteroids) {
-        stack<int> st;
+        vector<int> st;
 
         for (int i = 0; i < asteroids.size(); i++) {
             int curr = asteroids[i];
 
-            while (!st.empty() && st.top() > 0 && curr < 0) {
-                if (abs(st.top()) < abs(curr)) {
-                    st.pop();
+            while (!st.empty() && st.back() > 0 && curr < 0) {
+                 if (abs(st.back()) < abs(curr)) {
+                    st.pop_back();
                     continue;
                 } 
-                else if (abs(st.top()) == abs(curr)) {
-                    st.pop();
+                else if (abs(st.back()) == abs(curr)) {
+                    st.pop_back();
                     curr = 0;
                     break;
                 } 
@@ -25,16 +25,10 @@ public:
                 }
             }
             if (curr != 0) {
-                st.push(curr);
+                st.push_back(curr);
             }
         }
 
-        vector<int> result(st.size());
-        for (int i = st.size() - 1; i >= 0; i--) {
-            result[i] = st.top();
-            st.pop();
-        }
-
-        return result;
+        return st;
     }
 };
