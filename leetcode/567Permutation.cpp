@@ -4,6 +4,43 @@ using namespace std;
 #include <stack>
 #include <vector>
 #include <algorithm>
+
+class Solution {
+public:
+    bool checkInclusion(string s1, string s2) {
+        if (s1.length() > s2.length()) return false;
+
+        // Step 1: Frequency map of s1
+        vector<int> freqS1(26, 0);
+        for (char c : s1) {
+            freqS1[c - 'a']++;
+        }
+
+        vector<int> windowFreq(26, 0);
+
+        int windowSize = s1.length();
+        // Initialize first window
+        for (int i = 0; i < windowSize; i++) {
+            windowFreq[s2[i] - 'a']++;
+        }
+
+        if (windowFreq == freqS1) return true;
+
+        for (int i = windowSize; i < s2.length(); i++) {
+            windowFreq[s2[i] - 'a']++;
+
+            windowFreq[s2[i-windowSize] - 'a']--;
+            if (windowFreq == freqS1) return true;
+        }   
+        return false;
+    }
+};
+
+/*
+Time complexity is O(n), where n is the length of s2, because we scan s2 once with a sliding window.
+Space complexity is O(1), since we only use two fixed-size arrays of 26 letters each.
+*/
+
 class Solution {
     public:
         bool checkInclusion(string s1, string s2) {
