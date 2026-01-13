@@ -3,36 +3,31 @@
 class Solution {
 public:
     int minSubArrayLen(int target, std::vector<int>& nums) {
-        
-        int l = 0;
-        int total = 0;
-        int res = INT_MAX;
-        for (int r = 0; r < nums.size(); r++) {
-            total += nums[r];
-            std::cout << "\ntotal" << target;
-            std::cout << "\n  ";
-            while (total >= target) {
-                std::cout << "\n--- WHILE START ---";
-                std::cout << "\nr = " << r;
-                std::cout << "\nl = " << l;
-                std::cout << "\ntotal (before) = " << total;
+        int left = 0;
 
-                int windowLen = r - l + 1;
-                res = std::min(res, windowLen);
-                std::cout << "\nwindow length = " << windowLen;
-                std::cout << "\nres (min length so far) = " << res;
+        int sum = 0;
 
-                std::cout << "\nsubtracting nums[" << l << "] = " << nums[l];
-                total -= nums[l];
-                l++;
+        int result = INT_MAX;   
 
-                std::cout << "\ntotal (after) = " << total;
-                std::cout << "\nl (after increment) = " << l;
-                std::cout << "\n--- WHILE END ---\n";
+        for(int right = 0; right < nums.size(); right++){
+            sum+=nums[right];
+            while (sum >= target){
+                result = std::min(result, right-left+1);
+                sum-=nums[left];
+                left+=1;
             }
         }
-        return res == INT_MAX ? 0 : res;
-
+            
+        if(result == INT_MAX) return 0;
+        return result; 
     }
 };
 
+/*
+Time Complexity:
+O(n) — each element is visited at most twice (once by right, once by left), so total operations are linear.
+
+Space Complexity:
+O(1) — only a constant amount of extra space is used (left, sum, result), regardless of input size.
+
+*/
