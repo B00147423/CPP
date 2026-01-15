@@ -27,7 +27,7 @@ public:
             }
             r++;
         }
-        return output ;
+        return output;
     }
 };
 
