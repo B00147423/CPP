@@ -27,3 +27,52 @@ public:
         return false;
     }
 };
+
+/*
+Matrix (target = 5):
+
+[
+ [ 1,  4,  7, 11, 15 ],
+ [ 2,  5,  8, 12, 19 ],
+ [ 3,  6,  9, 16, 22 ],
+ [10, 13, 14, 17, 24 ],
+ [18, 21, 23, 26, 30 ]
+]
+
+m = 5
+n = 5
+
+Start:
+row = 0
+col = n - 1 = 4
+--------------------------------
+
+Step 1:
+matrix[0][4] = 15
+15 > 5  → col--
+row = 0, col = 3
+
+Step 2:
+matrix[0][3] = 11
+11 > 5  → col--
+row = 0, col = 2
+
+Step 3:
+matrix[0][2] = 7
+7 > 5   → col--
+row = 0, col = 1
+
+Step 4:
+matrix[0][1] = 4
+4 < 5   → row++
+row = 1, col = 1
+
+Step 5:
+matrix[1][1] = 5
+5 == 5  → FOUND → return true
+--------------------------------
+
+Loop condition:
+while (row < m && col >= 0)
+
+*/
