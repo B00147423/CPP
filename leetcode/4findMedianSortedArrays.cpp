@@ -8,7 +8,6 @@ public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
 
         vector<int> merged;
-
         //merged first.
         for(int i = 0; i < nums1.size(); i++){
             merged.push_back(nums1[i]);
