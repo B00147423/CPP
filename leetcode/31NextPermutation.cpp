@@ -13,6 +13,7 @@ public:
         for(int i = n-2; i >=  0; i--){
             if(nums[i] < nums[i+1]){
                 pivot = i;
+                break;
             }
         }
         // we didnt find pivot because it doesnt exitst
@@ -24,11 +25,11 @@ public:
 
         // find the element from the right that
         // is greater than pivot    
-        for(int i = n-1; i >= 0; i--){
+        for (int i = n - 1; i > pivot; i--) {
             if (nums[i] > nums[pivot]) {
-                swap(nums[i],nums[pivot]);
+                swap(nums[i], nums[pivot]);
+                break;
             }
-            break;
         }
 
         // Reverse the elements from pivot + 1 to the 
