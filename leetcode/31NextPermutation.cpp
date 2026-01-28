@@ -12,7 +12,7 @@ public:
         int pivot = -1;
         for(int i = n-2; i >=  0; i--){
             if(nums[i] < nums[i+1]){
-                pivot = 1;
+                pivot = i;
             }
         }
         // we didnt find pivot because it doesnt exitst
