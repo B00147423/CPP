@@ -1,3 +1,6 @@
+// LeetCode Problem 45: Jump Game II
+// https://leetcode.com/problems/jump-game-ii/
+#include <algorithm>
 #include <vector>
 
 class Solution {
@@ -26,6 +29,8 @@ public:
 // Space Complexity: O(1)
 
 /*
+This is a greedy algorithm approach to solve the Jump Game II problem.
+    
 dry run:
 nums = [2,3,1,1,4]
 loop[ 0..3] because we don't need to jump from the last index
