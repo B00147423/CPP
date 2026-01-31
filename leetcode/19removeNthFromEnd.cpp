@@ -42,3 +42,21 @@ public:
         return head;
     }
 };
+
+/*
+dry run:
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+1) Find length
+length = 5
+2) nodeToDelete = length - n = 5 - 2 = 3
+3) Walk to node before the one to delete
+curr = head; // 1
+i=0; curr = 2
+i=1; curr = 3
+4) Delete node
+deleteNode = curr->next; // 4
+curr->next = deleteNode->next; // 3->5
+delete deleteNode;
+return head;
+*/
