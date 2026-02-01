@@ -28,3 +28,10 @@ int countResponseTimeRegressions(std::vector<int> responseTimes) {
     }
     return count;
 }
+
+int main() {
+    std::vector<int> responseTimes = {100, 200, 150, 300, 250};
+    int result = countResponseTimeRegressions(responseTimes);
+    std::cout << "Number of response time regressions: " << result << std::endl;
+    return 0;
+}
