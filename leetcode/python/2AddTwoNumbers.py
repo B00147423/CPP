@@ -27,7 +27,7 @@ class Solution:
 
             total = l1Value + l2Value + carry
             carry = total // 10
-            tail.next = ListNose(total % 10)
+            tail.next = ListNode(total % 10)
             tail = tail.next
 
             if l1: l1 = l1.next
