@@ -1,5 +1,8 @@
+// 151. Reverse Words in a String
+#include <algorithm>
 #include <string>
 #include <vector>
+#include <iostream>
 using namespace std;
 
 class Solution {
@@ -37,3 +40,16 @@ public:
         return result;
     }
 };
+
+// Time complexity: O(n) where n is the length of the input string
+// Space complexity: O(n) for storing the words in the vector and the result string
+
+int main() {
+    Solution solution;
+    string input = " Hello   World ";
+    string output = solution.reverseWords(input);
+
+    std::cout << output << endl;  // ← THIS LINE
+
+    return 0;
+}
