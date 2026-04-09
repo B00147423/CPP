@@ -1,4 +1,3 @@
-# Leetcode 5. Longest Palindromic Substring
 class Solution:
     def longestPalindrome(self, s: str) -> str:
 
@@ -10,7 +9,7 @@ class Solution:
             #odd length
             while l >= 0 and r < len(s) and s[l] == s[r]:
                 if (r-l+1) > resLen:
-                    resIdx = i
+                    resIdx = l
                     resLen = r - l + 1
                 l -= 1
                 r += 1
@@ -19,7 +18,7 @@ class Solution:
             l, r = i, i + 1
             while l >= 0 and r < len(s) and s[l] == s[r]:
                 if (r-l+1) > resLen:
-                    resIdx = i
+                    resIdx = l
                     resLen = r - l + 1
                 l -= 1
                 r += 1
