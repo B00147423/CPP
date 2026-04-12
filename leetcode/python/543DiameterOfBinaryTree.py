@@ -1,4 +1,5 @@
-# Definition for a binary tree node.
+# 543. Diameter of Binary Tree
+# Link: https://leetcode.com/problems/diameter-of-binary-tree/
 from typing import Optional
 
 

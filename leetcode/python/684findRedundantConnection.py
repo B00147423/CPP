@@ -1,5 +1,7 @@
 # 684. Redundant Connection
+# Link: https://leetcode.com/problems/redundant-connection/
 from typing import List
+
 
 class UnionFind:
     def __init__(self, n):

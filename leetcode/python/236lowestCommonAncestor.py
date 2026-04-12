@@ -1,5 +1,5 @@
-# Definition for a binary tree node.
-# 235. Lowest Common Ancestor of a Binary Search Tree
+# 236. Lowest Common Ancestor of a Binary Tree
+# Link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val

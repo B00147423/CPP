@@ -1,6 +1,5 @@
 # 90. Subsets II
-# Given an integer array nums that may contain duplicates, return all possible subsets (the power set).
-# The solution set must not contain duplicate subsets. The subsets can be returned in any order.
+# Link: https://leetcode.com/problems/subsets-ii/
 from typing import List
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:

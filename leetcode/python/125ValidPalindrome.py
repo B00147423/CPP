@@ -1,4 +1,5 @@
-# 125 leetcode palindrome 
+# 125. Valid Palindrome
+# Link: https://leetcode.com/problems/valid-palindrome/
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:

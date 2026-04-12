@@ -1,3 +1,5 @@
+# 973. K Closest Points to Origin
+# Link: https://leetcode.com/problems/k-closest-points-to-origin/
 import heapq
 from typing import List
 

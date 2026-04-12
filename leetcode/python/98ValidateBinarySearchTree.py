@@ -1,4 +1,5 @@
-# Definition for a binary tree node.
+# 98. Validate Binary Search Tree
+# Link: https://leetcode.com/problems/validate-binary-search-tree/
 from typing import Optional
 
 

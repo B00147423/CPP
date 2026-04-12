@@ -1,4 +1,6 @@
 # 300. Longest Increasing Subsequence
+# Link: https://leetcode.com/problems/longest-increasing-subsequence/
+
 class Solution:
     def lengthOfLIS(self, nums):
         n = len(nums)

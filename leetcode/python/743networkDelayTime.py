@@ -1,4 +1,5 @@
 # 743. Network Delay Time
+# Link: https://leetcode.com/problems/network-delay-time/
 from collections import defaultdict
 from typing import List
 import heapq
