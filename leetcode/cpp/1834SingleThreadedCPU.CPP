@@ -1,4 +1,4 @@
-// 1834. Single-Threaded CPU
+// Leetcode 1834. Single-Threaded CPU
 //Link: https://leetcode.com/problems/single-threaded-cpu/description/
 #include <vector>
 #include <queue>
