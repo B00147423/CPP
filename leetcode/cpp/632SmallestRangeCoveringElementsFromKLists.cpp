@@ -5,6 +5,7 @@
 #include <queue>
 using namespace std;
 
+
 class Solution {
 public:
     vector<int> smallestRange(vector<vector<int>>& nums) {
@@ -16,6 +17,7 @@ public:
 
         // Insert the first element from each list into the min-heap
         for (int i = 0; i < nums.size(); i++) {
+            // Push the first element along with its list and element indices
             pq.push({nums[i][0], {i, 0}});
             maxVal = max(maxVal, nums[i][0]);
         }
@@ -55,4 +57,13 @@ nums = [
 
 
 
-        */
+      
+
+        DRY RUN
+        
+        pq = [(0, (1, 0)), (4, (0, 0)), (5, (2, 0))]
+        maxVal = 5, rangeStart = 0, rangeEnd = INT_MAX 
+        pq = [(4, (0, 0)), (5, (2, 0)), (9, (1, 1))]
+        maxVal = 9, rangeStart = 4, rangeEnd = 5
+
+ */
