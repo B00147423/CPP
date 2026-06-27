@@ -7,11 +7,16 @@ class Solution:
             return False
 
         mapChar = {}
+        used_t = set()   # keep track of characters in t already mapped
+
         for i in range(len(s)):
             if s[i] in mapChar:
                 if mapChar[s[i]] != t[i]:
                     return False
             else:
-                mapChar[s[i]] = t[i]
+                if t[i] in used_t:
+                    return False
+            mapChar[s[i]] = t[i]
+            used_t.add(t[i])
         return True
 
